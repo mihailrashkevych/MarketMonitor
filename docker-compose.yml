@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+    SqlServerDb:
+        container_name: SqlServerContainer
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+            - 1433:1433
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=veryStong_Password123
+    marketmonitor.api:
+        tty: true
+        restart: unless-stopped
+        environment:
+            - ASPNETCORE_URLS=http://+:8080
+        image: docker.io/mykhailorashkevych/market-monitor
+        #image: ${DOCKER_REGISTRY-}marketmonitor.api
+        ports:
+            - 8080:8080
+        build:
+          context: .
+          dockerfile: MarketMonitor/Dockerfile
+        depends_on:
+            - SqlServerDb
