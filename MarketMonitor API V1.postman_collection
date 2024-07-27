@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "6789b8e4-0d50-4611-9ee6-03664fa39953",
+		"name": "MarketMonitor API V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1388275"
+	},
+	"item": [
+		{
+			"name": "GetAssets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/assets/get-assets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"assets",
+						"get-assets"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "94cbe46e-c0d5-4fcc-88be-012348bb44d7",
+							"disabled": true
+						},
+						{
+							"key": "symbol",
+							"value": "AEP",
+							"disabled": true
+						},
+						{
+							"key": "currency",
+							"value": "USD",
+							"disabled": true
+						},
+						{
+							"key": "provider",
+							"value": "alpaca",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCurrentPrice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"ask\", \"bid\", \"last\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/price/get-current-price?instrumentId=ad9e5345-4c3b-41fc-9437-1d253f62db52&type=l1-subscription&id=1&provider=simulation&subscribe=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"price",
+						"get-current-price"
+					],
+					"query": [
+						{
+							"key": "instrumentId",
+							"value": "ad9e5345-4c3b-41fc-9437-1d253f62db52"
+						},
+						{
+							"key": "type",
+							"value": "l1-subscription"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "provider",
+							"value": "simulation"
+						},
+						{
+							"key": "subscribe",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
