@@ -5,7 +5,7 @@ MarketMonitor is a proxy API with its own database and has two endpoints that re
 ____
 
 # Steps to run
-[+ Install docker](https://docs.docker.com/engine/install/)
++ [Install docker](https://docs.docker.com/engine/install/)
 + Save [docker-compose.yaml](https://github.com/mihailrashkevych/MarketMonitor/blob/master/docker-compose.yml) file to your machine
 + Run Docker
 + Run command in directory with docker-compose.yaml file 'docker-compose up'
